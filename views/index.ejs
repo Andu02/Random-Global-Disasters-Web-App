@@ -1,0 +1,42 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container">
+    <div class="text-center mt-5">
+        <h1 class="mb-4">Random Global Disaster Insights</h1>
+        
+        <div class="col-lg-6 mx-auto">
+            <form action="/" id="form" class="form" method="POST">
+                <select name="limit" class="form-select">
+                    <option value="1" data-display="Select">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                </select>
+                <button type="submit" class="form-submit">Go</button>
+            </form>
+        </div>
+
+        <% if(locals.content) { %> 
+            <h1 class="mt-5 mb-4">Discover Random Global Emergency Events Below:</h1>
+            <% content.forEach(disaster => { %>
+                <div class="col-lg-10 mx-auto">
+                    <p class="lead"><a href="/disaster/<%= disaster.id %>"><b><%= disaster.fields.title %></b></p>
+                    <hr>
+                </div>  
+            <% })} %>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</body>
+</html>
