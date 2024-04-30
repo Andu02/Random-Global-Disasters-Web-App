@@ -2,6 +2,10 @@ import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
 import { marked } from "marked";
+import translate from "translate";
+
+translate.engine = "deepl";
+translate.key = process.env.DEEPL_KEY;
 
 const app = express();
 const port = 3000;
@@ -41,6 +45,20 @@ app.get("/disaster/:id", async (req, res) => {
   }
 });
 
+app.get("/translate", async (req, res) => {
+  try {
+    const translatedText = await translate(decodeURIComponent(req.query.articleText), "en");
+    console.log(translatedText);
+    res.render("seeDisaster.ejs", {
+      title: decodeURIComponent(req.query.title),
+      articleText: translatedText
+    });
+  } catch (error) {
+    console.log(error.response.data);
+    res.status(500);
+  }
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
@@ -61,3 +79,4 @@ function pickElementsFromArray(array, count) {
 
   return pickedElements;
 }
+

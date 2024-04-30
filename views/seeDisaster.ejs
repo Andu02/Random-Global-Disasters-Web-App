@@ -1,6 +1,7 @@
 <%- include('partials/header.ejs') %>
 
 <div class="container mt-5">
+    <a href="/translate?articleText=<%= encodeURIComponent(articleText) %>&title=<%= encodeURIComponent(title) %>"><button class="form-button float-right">Translate</button></a>
     <div class="text-center mt-5">
         <% if(locals.title && locals.articleText) { %> 
         <h1><%= title %></h1>

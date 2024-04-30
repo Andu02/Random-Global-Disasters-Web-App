@@ -10830,6 +10830,16 @@ a {
   text-decoration: none; /* Remove underline */
 }
 
+a:hover {
+  color: inherit; /* Use the color inherited from its parent */
+  text-decoration: none; /* Remove underline */
+}
+
+a:active {
+  color: inherit; /* Use the color inherited from its parent */
+  text-decoration: none; /* Remove underline */
+}
+
 /* Basic button styles */
 button {
   display: inline-block;
