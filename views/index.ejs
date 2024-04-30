@@ -23,7 +23,7 @@
         </div>
 
         <% if(locals.content) { %> 
-            <h1 class="mt-5 mb-4">Discover Random Global Emergency Events Below:</h1>
+            <h1 class="mt-5 mb-4">Discover The Events Below:</h1>
             <% content.forEach(disaster => { %>
                 <div class="col-lg-10 mx-auto">
                     <p class="lead"><a href="/disaster/<%= disaster.id %>"><b><%= disaster.fields.title %></b></p>
