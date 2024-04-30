@@ -2,27 +2,26 @@ import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
 import { marked } from "marked";
-import translate from "translate";
-
-translate.engine = "deepl";
-translate.key = process.env.DEEPL_KEY;
 
 const app = express();
 const port = 3000;
 
+// Total number of disasters to fetch
+const totalNumberOfDisasters = 100;
+
+// Middleware setup
 app.use(bodyParser.urlencoded({ extended: false }));
-
 app.use(express.static("public"));
-
 app.set('view engine', 'ejs');
 
 app.get("/", (req, res) => {
     res.render("index.ejs");
 });
 
+// Handling POST request to fetch disaster reports
 app.post("/", async (req, res) => {
     try {
-      const result = await axios.get(`https://api.reliefweb.int/v1/reports?appname=DataDisaster&limit=100`);
+      const result = await axios.get(`https://api.reliefweb.int/v1/reports?appname=DataDisaster&limit=${totalNumberOfDisasters}`);
       res.render("index.ejs", {
         content: pickElementsFromArray(result.data.data, req.body.limit)
       });
@@ -32,6 +31,7 @@ app.post("/", async (req, res) => {
     }
   });
 
+// Handling route to view a specific disaster
 app.get("/disaster/:id", async (req, res) => {
   try {
     const result = await axios.get(`https://api.reliefweb.int/v1/reports/${req.params.id}`);
@@ -45,24 +45,12 @@ app.get("/disaster/:id", async (req, res) => {
   }
 });
 
-app.get("/translate", async (req, res) => {
-  try {
-    const translatedText = await translate(decodeURIComponent(req.query.articleText), "en");
-    console.log(translatedText);
-    res.render("seeDisaster.ejs", {
-      title: decodeURIComponent(req.query.title),
-      articleText: translatedText
-    });
-  } catch (error) {
-    console.log(error.response.data);
-    res.status(500);
-  }
-});
-
+// Listening to the port
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
+// Function to pick random elements from an array
 function pickElementsFromArray(array, count) {
   if (count >= array.length) {
       return array.slice(); // Return a copy of the entire array
