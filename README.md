@@ -1,3 +1,7 @@
+# Link
+Access to the website is available at the following address, utilizing Render (https://render.com): 
+- https://random-global-disasters-web-app.onrender.com
+
 # Description:
 This GitHub project is a web application designed to provide insights into global disaster occurrences using the ReliefWeb API. Users can explore disaster reports and articles fetched from the ReliefWeb database.
 
