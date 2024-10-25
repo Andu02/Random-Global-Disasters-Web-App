@@ -1,4 +1,4 @@
-# Link
+# Link (temporarily unavailable)
 Access to the website is available at the following address, utilizing Render (https://render.com): 
 - https://random-global-disasters-web-app.onrender.com
 
@@ -21,3 +21,17 @@ This GitHub project is a web application designed to provide insights into globa
 - Install dependencies using npm: npm install.
 - Start the server: node index.js.
 - Access the application in your web browser at http://localhost:3000.
+
+# Preview:
+
+- Main Page
+
+![main_page](https://github.com/user-attachments/assets/09886082-6182-4aa6-9338-5afbfd24d52a)
+
+- Add Movie Page
+
+![add_movie_page](https://github.com/user-attachments/assets/59e879c4-de40-4657-8559-b8182f1f9a80)
+
+- Search Page
+
+![search_page](https://github.com/user-attachments/assets/ba62233c-e3fe-4961-a7ea-0659ddb57bb3)
