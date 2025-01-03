@@ -1,4 +1,4 @@
-# Link (temporarily unavailable)
+# Link
 Access to the website is available at the following address, utilizing Render (https://render.com): 
 - https://random-global-disasters-web-app.onrender.com
 
