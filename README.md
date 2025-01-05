@@ -24,14 +24,6 @@ This GitHub project is a web application designed to provide insights into globa
 
 # Preview:
 
-- Main Page
+![random-global-disasters-web-app](https://github.com/user-attachments/assets/d7848492-dbc3-4157-bd1c-2ae817c1a3df)
 
-![main_page](https://github.com/user-attachments/assets/09886082-6182-4aa6-9338-5afbfd24d52a)
 
-- Add Movie Page
-
-![add_movie_page](https://github.com/user-attachments/assets/59e879c4-de40-4657-8559-b8182f1f9a80)
-
-- Search Page
-
-![search_page](https://github.com/user-attachments/assets/ba62233c-e3fe-4961-a7ea-0659ddb57bb3)
